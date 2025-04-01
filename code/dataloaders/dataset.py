@@ -16,8 +16,6 @@ class BaseDataSets(Dataset):
         self.split = split
         self.transform = transform
         if self.split == 'train':
-            # h5py训练数据的列表在../data/ACDC(Prostate)
-            # with open(self._base_dir + '/train_slices.list', 'r') as f1:
             if "ACDC" in self._base_dir:
                 with open('../data/ACDC' + '/train_slices.list', 'r') as f1:
                     self.sample_list = f1.readlines()
@@ -30,8 +28,6 @@ class BaseDataSets(Dataset):
             self.sample_list = [item.replace('\n', '') for item in self.sample_list]
 
         elif self.split == 'val':
-            # h5py训练数据的列表在../data/ACDC(Prostate)
-            # with open(self._base_dir + '/val.list', 'r') as f:
             if "ACDC" in self._base_dir:
                 with open('../data/ACDC' + '/val.list', 'r') as f1:
                     self.sample_list = f1.readlines()
@@ -53,10 +49,8 @@ class BaseDataSets(Dataset):
         case = self.sample_list[idx]
         if self.split == "train":
             h5f = h5py.File(self._base_dir + "train/{}.h5".format(case), 'r')
-            # h5f = h5py.File("/root/autodl-tmp/Database/ACDC/h5py/train/{}.h5".format(case), 'r')
         else:
             h5f = h5py.File(self._base_dir + "val/{}.h5".format(case), 'r')
-            # h5f = h5py.File("/root/autodl-tmp/Database/ACDC/h5py/val/{}.h5".format(case), 'r')
         image = h5f['image'][:]
         label = h5f['label'][:]
         sample = {'image': image, 'label': label}
@@ -88,9 +82,6 @@ class RandomGenerator(object):
 
     def __call__(self, sample):
         image, label = sample['image'], sample['label']
-        # ind = random.randrange(0, img.shape[0])
-        # image = img[ind, ...]
-        # label = lab[ind, ...]
         if random.random() > 0.5:
             image, label = random_rot_flip(image, label)
         elif random.random() > 0.5:

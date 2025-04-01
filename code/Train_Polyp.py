@@ -287,7 +287,7 @@ if __name__ == "__main__":
         torch.manual_seed(args.seed)
         torch.cuda.manual_seed(args.seed)
 
-    snapshot_path = args.model_save_path + "/fzyy_Polyp_{}_{}_{}_labeled".format(args.model, args.exp, args.labeled_num)
+    snapshot_path = args.model_save_path + "/Polyp_{}_{}_{}_labeled".format(args.model, args.exp, args.labeled_num)
 
     if not os.path.exists(snapshot_path):
         os.makedirs(snapshot_path)

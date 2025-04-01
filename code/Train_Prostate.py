@@ -62,7 +62,7 @@ def patients_to_slices(dataset, patiens_num):
     elif "Prostate":
         ref_dict = {"2": 47, "4": 111, "7": 191,
                     "11": 306, "14": 391, "18": 478, "35": 940}
-    elif "Pulyp" in dataset:
+    elif "Polyp" in dataset:
         ref_dict = {"2": 47, "3": 51, "7": 102,
                     "11": 306, "14": 203, "28": 405, "35": 940, "70": 1015}
     else:

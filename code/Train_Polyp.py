@@ -48,7 +48,7 @@ parser.add_argument('--temp', default=1, type=float)
 parser.add_argument('--device_cpu', default="cpu", type=str, help='use cpu')
 parser.add_argument('--device_gpu', default="cuda", type=str, help='use gpu')
 parser.add_argument('--model_save_path', default="/root/autodl-tmp/Model/test", type=str, help='Save Path of Model')
-parser.add_argument('--data_path', type=str, default='/root/autodl-tmp/Database/Pulyp/h5py/', help='Path of Data')
+parser.add_argument('--data_path', type=str, default='/root/autodl-tmp/Database/Polyp/h5py/', help='Path of Data')
 
 args = parser.parse_args()
 os.environ['CUDA_VISIBLE_DEVICES'] = args.gpu
@@ -62,7 +62,7 @@ def patients_to_slices(dataset, patiens_num):
     elif "Prostate":
         ref_dict = {"2": 47, "4": 111, "7": 191,
                     "11": 306, "14": 391, "18": 478, "35": 940}
-    elif "Pulyp" in dataset:
+    elif "Polyp" in dataset:
         ref_dict = {"2": 47, "3": 51, "7": 102,
                     "11": 306, "14": 203, "28": 405, "35": 940, "70": 1015}
     else:

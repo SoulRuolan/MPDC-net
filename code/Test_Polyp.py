@@ -16,7 +16,7 @@ from utils import ramps
 import torch.nn.functional as F
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--root_path', type=str, default='/root/autodl-tmp/Database/Pulyp/h5py/test/',
+parser.add_argument('--root_path', type=str, default='/root/autodl-tmp/Database/Polyp/h5py/test/',
                     help='Name of Experiment')
 parser.add_argument('--exp', type=str, default='MPDCNet', help='experiment_name')
 parser.add_argument('--model', type=str, default='mcnet_kd', help='model_na`me')
@@ -96,7 +96,7 @@ def test_single_volume(case, net, test_save_path, FLAGS):
 
 
 def Inference(FLAGS):
-    with open('../data/Pulyp/test.list', 'r') as f:
+    with open('../data/Polyp/test.list', 'r') as f:
         image_list = f.readlines()
     image_list = sorted([item.replace('\n', '').split(".")[0] for item in image_list])
 

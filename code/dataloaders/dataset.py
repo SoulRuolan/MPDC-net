@@ -23,7 +23,7 @@ class BaseDataSets(Dataset):
                 with open('../data/Prostate' + '/train_slices.list', 'r') as f1:
                     self.sample_list = f1.readlines()
             elif "Pulyp" in self._base_dir:
-                with open('../data/Pulyp' + '/train_slices.list', 'r') as f1:
+                with open('../data/Polyp' + '/train_slices.list', 'r') as f1:
                     self.sample_list = f1.readlines()
             self.sample_list = [item.replace('\n', '') for item in self.sample_list]
 
@@ -35,7 +35,7 @@ class BaseDataSets(Dataset):
                 with open('../data/Prostate' + '/val.list', 'r') as f1:
                     self.sample_list = f1.readlines()
             elif "Pulyp" in self._base_dir:
-                with open('../data/Pulyp' + '/val.list', 'r') as f1:
+                with open('../data/Polyp' + '/val.list', 'r') as f1:
                     self.sample_list = f1.readlines()
             self.sample_list = [item.replace('\n', '') for item in self.sample_list]
         if num is not None and self.split == "train":

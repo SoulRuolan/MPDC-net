@@ -18,7 +18,7 @@ import torch.nn.functional as F
 parser = argparse.ArgumentParser()
 parser.add_argument('--root_path', type=str, default='/root/autodl-tmp/Database/Pulyp/h5py/test/',
                     help='Name of Experiment')
-parser.add_argument('--exp', type=str, default='DCNet', help='experiment_name')
+parser.add_argument('--exp', type=str, default='MPDCNet', help='experiment_name')
 parser.add_argument('--model', type=str, default='mcnet_kd', help='model_na`me')
 parser.add_argument('--num_classes', type=int, default=2, help='output channel of network')
 parser.add_argument('--temperature', type=float, default=0.1, help='temperature of sharpening')
@@ -100,8 +100,8 @@ def Inference(FLAGS):
         image_list = f.readlines()
     image_list = sorted([item.replace('\n', '').split(".")[0] for item in image_list])
 
-    snapshot_path = "../model/Polyp".format(FLAGS.model, FLAGS.exp, FLAGS.labeled_num)
-    test_save_path = "../model/Polyp/predictions/".format(FLAGS.model, FLAGS.exp, FLAGS.labeled_num)
+    snapshot_path = "../model/Polyp_{}_{}_{}_labeled".format(FLAGS.model, FLAGS.exp, FLAGS.labeled_num)
+    test_save_path = "../model/Polyp_{}_{}_{}_labeled/predictions/".format(FLAGS.model, FLAGS.exp, FLAGS.labeled_num)
 
     if os.path.exists(test_save_path):
         shutil.rmtree(test_save_path)

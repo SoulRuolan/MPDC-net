@@ -26,7 +26,7 @@ def get_current_consistency_weight(epoch):
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--root_path', type=str, default='../data/Polyp', help='Name of Experiment')
-parser.add_argument('--exp', type=str, default='DCNet', help='experiment_name')
+parser.add_argument('--exp', type=str, default='MPDCNet', help='experiment_name')
 parser.add_argument('--model', type=str, default='mcnet_kd', help='model_name')
 parser.add_argument('--max_iterations', type=int, default=50000, help='maximum epoch number to train')
 parser.add_argument('--batch_size', type=int, default=24, help='batch_size per gpu')

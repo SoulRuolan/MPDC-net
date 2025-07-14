@@ -10,4 +10,5 @@ Abstract：Semi-supervised learning (SSL) is an effective method for medical ima
 Experiment Detail：
 
 The "data" file contains the train, test, and validation splits for the ACDC, PROMISE12, and Polyp datasets. Polyp datasets includes CVC-ClinicDB and Kvasi
+
 In the "model" file, we provide our pre-trained model, as well as the testing details and results on the test dataset.
